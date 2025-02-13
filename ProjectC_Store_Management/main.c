@@ -57,7 +57,8 @@ void showAllProduct() {
     printf("| Product ID | Product Name   | Quantity |  Price   |\n");
     printf("|------------|----------------|----------|----------|\n");
 
-    for (int i = 0; i < productCount; i++) {
+	int i;
+    for (i = 0; i < productCount; i++) {
         printf("| %-10s | %-14s | %-8d | %-8.3f |\n",
                products[i].productID, products[i].productName,
                products[i].quantity, products[i].price);
@@ -86,7 +87,8 @@ void editProduct() {
     scanf("%s", id);
 
     int found = -1;
-    for (int i = 0; i < productCount; i++) {
+    int i;
+    for (i = 0; i < productCount; i++) {
         if (strcmp(products[i].productID, id) == 0) {
             found = i;
             break;
@@ -148,7 +150,8 @@ void deleteProduct() {
     scanf("%s", id);
 
     int found = -1;
-    for (int i = 0; i < productCount; i++) {
+    int i;
+    for (i = 0; i < productCount; i++) {
         if (strcmp(products[i].productID, id) == 0) {
             found = i;
             break;
@@ -160,7 +163,8 @@ void deleteProduct() {
         return;
     }
 
-    for (int i = found; i < productCount - 1; i++) {
+
+    for (i = found; i < productCount - 1; i++) {
         products[i] = products[i + 1];
     }
     productCount--;
