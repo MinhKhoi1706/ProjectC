@@ -243,8 +243,8 @@ void login() {
 
         
         if (strcmp(email, ADMIN_EMAIL) == 0 && strcmp(password, ADMIN_PASSWORD) == 0) {
-            printf("\nLogin successful\n");
-            menu(); 
+            printf("\nLogin successful\n");            
+            menu();			  
             break;
         } else {
             printf("\nInvalid login! Please try again.\n");
