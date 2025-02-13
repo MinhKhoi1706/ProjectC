@@ -40,6 +40,7 @@ void addProduct() {
 	int choice;
     printf("Choice: ");
     scanf("%d", &choice);
+    if (choice == 0) system("cls"); 
     if (choice == 0) return;
 }
 
@@ -47,10 +48,10 @@ void showAllProduct() {
 	
 	
     
-    if (productCount == 0) {
-        printf("\nNo products available!\n");
-        return;
-    }
+//    if (productCount == 0) {
+//        printf("\nNo products available!\n");
+//        return;
+//    }
 	printf("***Store Management Sytem Using C***");
     printf("\n%29s","---All Product---\n");
     printf("|------------|----------------|----------|----------|\n");
@@ -70,6 +71,7 @@ void showAllProduct() {
 	int choice;
     printf("Choice: ");
     scanf("%d", &choice);
+    if (choice == 0) system("cls"); 
     if (choice == 0) return;
 }
 
@@ -133,6 +135,7 @@ void editProduct() {
 	int choice;
     printf("Choice: ");
     scanf("%d", &choice);
+    if (choice == 0) system("cls"); 
     if (choice == 0) return;
 }
 
@@ -175,6 +178,7 @@ void deleteProduct() {
 	int choice;
     printf("Choice: ");
     scanf("%d", &choice);
+    if (choice == 0) system("cls");  
     if (choice == 0) return;
     
 }
@@ -183,7 +187,7 @@ void deleteProduct() {
 void menu() {
     int choice;
     while (1) {
-    	system("cls");  
+    	
     	printf("***Store Management Sytem Using C***\n");
         printf("\n===== MENU =====\n");
         printf("[1] Add Product\n");
@@ -196,9 +200,10 @@ void menu() {
         scanf("%d", &choice);
 
         switch (choice) {
-            case 1:
-            	system("cls");
-                addProduct();
+            case 1:          	
+				system("cls");    
+				addProduct(); 
+				         
                 break;
             case 2:
             	system("cls");
