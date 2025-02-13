@@ -147,7 +147,7 @@ void deleteProduct() {
         printf("\nNo products available to delete!\n");
         return;
     }
-
+    
     char id[10];
     printf("\nEnter Product ID to delete: ");
     scanf("%s", id);
@@ -160,19 +160,30 @@ void deleteProduct() {
             break;
         }
     }
-
+    
     if (found == -1) {
-        printf("\nProduct ID not found!\n");
-        return;
+        printf("\nProduct ID not found! Nothing was deleted.\n");
+        return; 
     }
+    
+    int confirm;
+    printf("\nDelete this product?\n");
+    printf("[1] Yes\n");
+    printf("[2] No\n");
+    printf("Choice: ");
+    scanf("%d", &confirm);
 
+    if (confirm == 1) {
+    	int i;
+        for (i = found; i < productCount - 1; i++) {
+            products[i] = products[i + 1];
+        }
+        productCount--;
 
-    for (i = found; i < productCount - 1; i++) {
-        products[i] = products[i + 1];
+        printf("\nProduct deleted successfully!\n");
+    } else {
+        printf("\nProduct not deleted.\n");
     }
-    productCount--;
-
-    printf("\nProduct deleted successfully!\n");
     
     printf("[0] Back to Menu\n");
 	int choice;
